@@ -1,0 +1,12 @@
+﻿---
+applications:
+- name: core-cf-microservice-<enter your name>
+  buildpack: https://github.com/cloudfoundry/dotnet-core-buildpack#v2.0.5
+  instances: 1
+  memory: 256M
+  # determines which environment to pull configs from
+  env:
+    ASPNETCORE_ENVIRONMENT: dev
+  services:
+    - <your config server instance name>
+    - <your registry name>
